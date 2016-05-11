@@ -1,2 +1,2 @@
 # bison-scripts
-small utilities for bison-generated parsers
+small utilities for bison-generated parsers of Astl
