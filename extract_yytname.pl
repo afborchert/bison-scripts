@@ -15,7 +15,7 @@ die "start of yytname table not found\n" unless $found;
 print "namespace $namespace {\n";
 print "extern const char* const yytname[] =\n";
 while (<>) {
-   s{,?\s*YY_NULL\b}{}; 
+   s/\bYY_NULL(?:PTR)?\b/nullptr/;
    print $_;
    last if m{\};$}
 }
