@@ -55,12 +55,13 @@ while (<$in>) {
    s/^\s+//;
    s/,$//;
    s/, 0$//;
+   s/, YY_NULLPTR$//;
+   s/, YY_NULL$//;
    foreach my $symbol (split /,\s+/) {
       $symbol =~ s/^"//;
       $symbol =~ s/"$//;
       next unless $symbol =~ m{^[A-Za-z_][A-Za-z_0-9]*$};
       next if $symbol eq "error";
-      next if $symbol eq "YY_NULL";
       push(@symbols, $symbol);
    }
 }
